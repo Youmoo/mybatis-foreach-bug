@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <!-- 基于环境配置，这样可以共用mappers -->
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${erp.jdbc.driver}"/>
+                <property name="url" value="${erp.jdbc.url}"/>
+                <property name="username" value="${erp.jdbc.username}"/>
+                <property name="password" value="${erp.jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="TestMapper.xml"/>
+    </mappers>
+</configuration>
